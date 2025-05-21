@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<sdf version="1.9">
+<model name="aruco_marker">
+<!-- Set static to false so that its pose can be updated -->
+<static>false</static>
+<link name="marker_link">
+<!-- Initial pose in the world -->
+<pose>2.84 0 3.758 0 -1.5708 0</pose>
+<!-- Disable gravity if you want it to just follow your commands -->
+<gravity>false</gravity>
+<visual name="marker_visual">
+<geometry>
+<plane>
+<normal>0 0 1</normal>
+<size>0.3 0.3</size>
+</plane>
+</geometry>
+<material>
+<diffuse>1 1 1 1</diffuse>
+<specular>0.4 0.4 0.4 1</specular>
+<pbr>
+<metal>
+<albedo_map>/mpc/new/tracktor-beam/src/arucotag.png</albedo_map>
+</metal>
+</pbr>
+</material>
+</visual>
+</link>
+</model>
+</sdf>

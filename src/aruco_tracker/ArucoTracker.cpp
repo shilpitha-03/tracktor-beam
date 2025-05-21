@@ -23,6 +23,11 @@ ArucoTrackerNode::ArucoTrackerNode()
 	_camera_info_sub = create_subscription<sensor_msgs::msg::CameraInfo>(
 				   "/camera_info", qos, std::bind(&ArucoTrackerNode::camera_info_callback, this, std::placeholders::_1));
 
+	// _image_sub = create_subscription<sensor_msgs::msg::Image>(
+	// 		     " /world/default/model/x500_mono_cam_0/link/camera_link/sensor/imager/image@sensor_msgs/msg/Image", qos, std::bind(&ArucoTrackerNode::image_callback, this, std::placeholders::_1));
+
+	// _camera_info_sub = create_subscription<sensor_msgs::msg::CameraInfo>(
+	// 			   "/world/default/model/x500_mono_cam_0/link/camera_link/sensor/imager/camera_info@sensor_msgs/msg/CameraInfo", qos, std::bind(&ArucoTrackerNode::camera_info_callback, this, std::placeholders::_1));
 	// Publishers
 	_image_pub = create_publisher<sensor_msgs::msg::Image>("/image_proc", qos);
 	_target_pose_pub = create_publisher<geometry_msgs::msg::PoseStamped>("/target_pose", qos);
